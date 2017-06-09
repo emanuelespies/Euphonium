@@ -1,0 +1,47 @@
+<div class="jumbotron">
+	<h1 class="text-center">Tá Barato</h1>
+</div>
+
+<p ng-show="mensagem.length" class="alert alert-info">
+	{{mensagem}}
+</p>
+
+<div class="row">
+	<div class="col-md-12">
+		<form>	
+				<label for="filtro">Pesquisar produto:</label>
+				<input class="form-control" id="filtro" placeholder="filtrar pelo título do produto" 
+					ng-model="filtro" ng-model-options="{ debounce: 500 }">				
+		</form>
+	</div> 
+</div> 
+
+<div class="row">
+    <meu-painel class="col-md-2 painel-animado" ng-repeat="produto in produtos | filter: filtro" titulo="{{produto.titulo}}">
+        <div class="panel-heading">
+			<h3 class="panel-title text-center">
+				<a href="/#/produtos/{{produto._id}}">{{produto.titulo}}</a>
+			</h3>
+		</div>
+
+        <meu-produto url="{{produto.url}}" alt="{{produto.titulo}}"></meu-produto>
+
+        <botao-excluir nome="Excluir" acao="remover(produto)">Remover</meu-botao-perigo>
+    </meu-painel>
+</div>
+
+<div>
+	<span class="input-btn">
+		<a href="/#/produtos/new" class="btn btn-primary" type="button">
+			Novo Produto
+		</a>
+	</span>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-footer">Desenvolvido por Luísa Verza</div>
+		</div>
+	</div>
+</div>

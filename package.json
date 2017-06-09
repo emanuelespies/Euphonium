@@ -1,0 +1,23 @@
+{
+  "name": "euphonium",
+  "version": "1.0.0",
+  "description": "buy, sell, products",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "buy",
+    "sell",
+    "products"
+  ],
+  "author": "luisaverza",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "consign": "^0.1.2",
+    "express": "^4.13.3",
+    "mongoose": "^4.3.1"
+  }
+}
